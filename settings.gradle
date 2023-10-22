@@ -16,3 +16,4 @@ rootProject.name = "views-widgets-samples"
 include ':app'
 include ':listviewarrayadapter'
 include ':customadapter'
+include ':gridview'
