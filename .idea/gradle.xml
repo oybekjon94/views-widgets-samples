@@ -12,6 +12,7 @@
             <option value="$PROJECT_DIR$" />
             <option value="$PROJECT_DIR$/app" />
             <option value="$PROJECT_DIR$/customadapter" />
+            <option value="$PROJECT_DIR$/expandablelistview" />
             <option value="$PROJECT_DIR$/gridview" />
             <option value="$PROJECT_DIR$/listviewarrayadapter" />
           </set>
