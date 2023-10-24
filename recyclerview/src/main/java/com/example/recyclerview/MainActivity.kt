@@ -28,5 +28,32 @@ class MainActivity : AppCompatActivity() {
             layoutManager = myLayoutManager
             addItemDecoration(DividerItemDecoration(this@MainActivity,myLayoutManager.orientation))
         }
+
+        customAdapter.setListener(object :RecyclerViewListener{
+            override fun onItemClick(position: Int) {
+
+            }
+
+            override fun onDeleteBtnClick(position: Int) {
+                //listdan xam ochirib tashash kere
+                list.removeAt(position)
+               customAdapter.notifyItemRemoved(position)
+            }
+
+        })
+
+        binding.addBtn.setOnClickListener {
+            val title = binding.titleEt.text.toString()
+            if (title.isNotBlank()){
+                list.add(title.trim())
+
+                //adapter vaqtida sezishi uchun
+                customAdapter.notifyItemInserted(list.size)
+
+                //malumotni send qilgandan keyin
+                //send joyini clear qilish
+                binding.titleEt.text.clear()
+            }
+        }
     }
 }

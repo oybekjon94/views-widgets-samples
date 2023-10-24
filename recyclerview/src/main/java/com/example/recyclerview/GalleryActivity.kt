@@ -42,6 +42,10 @@ class GalleryActivity : AppCompatActivity() {
                     startActivity(this)
                 }
             }
+
+            override fun onDeleteBtnClick(position: Int) {
+
+            }
         })
     }
 }
