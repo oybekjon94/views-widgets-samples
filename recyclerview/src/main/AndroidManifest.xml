@@ -8,7 +8,9 @@
         android:roundIcon="@mipmap/ic_launcher_round"
         android:supportsRtl="true"
         android:theme="@style/Theme.Viewswidgetssamples">
-
+        <activity
+            android:name=".ImageViewActivity"
+            android:exported="false" />
         <activity
             android:name=".GalleryActivity"
             android:exported="true">

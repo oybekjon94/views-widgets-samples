@@ -1,7 +1,9 @@
 package com.example.recyclerview
 
+import android.content.Intent
 import androidx.appcompat.app.AppCompatActivity
 import android.os.Bundle
+import android.widget.Toast
 import androidx.recyclerview.widget.GridLayoutManager
 import androidx.recyclerview.widget.LinearLayoutManager
 import androidx.recyclerview.widget.StaggeredGridLayoutManager
@@ -32,5 +34,14 @@ class GalleryActivity : AppCompatActivity() {
             adapter = galleryAdapter
             layoutManager = myManager
         }
+        // 4) listenerni adapterga berish kere
+        galleryAdapter.setListener(object :RecyclerViewListener{
+            override fun onItemClick(position: Int) {
+                Intent(this@GalleryActivity,ImageViewActivity::class.java).apply {
+                    putExtra("image",list[position])
+                    startActivity(this)
+                }
+            }
+        })
     }
 }

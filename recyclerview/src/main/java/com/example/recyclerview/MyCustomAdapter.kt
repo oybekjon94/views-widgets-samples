@@ -6,18 +6,21 @@ import androidx.recyclerview.widget.RecyclerView
 import com.example.recyclerview.databinding.ItemListLayoutBinding
 
 //constructor biz ozimiz malumotlar listini berishimiz kere
-class MyCustomAdapter(val list:List<String>):RecyclerView.Adapter<MyCustomAdapter.MyViewHolder>() {
-    inner class MyViewHolder(val binding: ItemListLayoutBinding):RecyclerView.ViewHolder(binding.root){
+class MyCustomAdapter(val list: List<String>) :
+    RecyclerView.Adapter<MyCustomAdapter.MyViewHolder>() {
+    inner class MyViewHolder(val binding: ItemListLayoutBinding) :
+        RecyclerView.ViewHolder(binding.root) {
 
         //biz title bersak bindingdagi itemga malumotni berib quysin
-        fun bind(title:String){
+        fun bind(title: String) {
             binding.titleTv.text = title
         }
     }
 
     override fun onCreateViewHolder(parent: ViewGroup, viewType: Int): MyViewHolder {
         //biz myViewholder yaratish uchun binding kere shuning uchun bindingni create
-        val binding = ItemListLayoutBinding.inflate(LayoutInflater.from(parent.context),parent,false)
+        val binding =
+            ItemListLayoutBinding.inflate(LayoutInflater.from(parent.context), parent, false)
         //endi MyViewHolder create
         return MyViewHolder(binding)
     }
