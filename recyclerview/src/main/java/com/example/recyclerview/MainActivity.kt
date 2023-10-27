@@ -68,11 +68,12 @@ class MainActivity : AppCompatActivity() {
 
         binding.addBtn.setOnClickListener {
             val title = binding.titleEt.text.toString()
+            //yangi list create
+            val newList = mutableListOf<String>() // 1
+            newList.addAll(list)
             if (title.isNotBlank()) {
                 list.add(title.trim())
-
-                //adapter vaqtida sezishi uchun
-                customAdapter.notifyItemInserted(list.size)
+                customAdapter.submitList(newList)  // 2
 
                 //malumotni send qilgandan keyin
                 //send joyini clear qilish
